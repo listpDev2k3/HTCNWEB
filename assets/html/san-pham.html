@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <link rel="shortcut icon" type="image/x-icon" href="../img2/logo-project.jpg">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand:wght@500&family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/trang-chu.css" />
+    <link rel="stylesheet" href="../css/san-pham.css" />
+    <script src="../data/data-products.js"></script>
+    <script src="../js/product.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__top max-width">
+        <a
+          class="header__top__logo"
+          href="./trang-chu.html"
+          title="LISTP Official Mall Việt Nam - Chính Hãng"
+          target="_blank"
+        >
+          <img
+            class="logo"
+            src="../img2/logo-project.jpg"
+            alt="LISTP Official Mall Việt Nam - Chính Hãng"
+          />
+        </a>
+        <div class="header__top__search">
+          <input
+            class="header__top__search__input__search"
+            type="text"
+            placeholder="Từ khóa..."
+          />
+          <button class="header__top__search__input__search__btn">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+        <div class="header__top__items__content">
+          <i class="bi bi-telephone"></i>
+          <a class="header-hover-color" href="#">
+            <small>Gọi mua hàng</small>
+            <br />
+            <b>098 7556 203</b>
+          </a>
+        </div>
+        <div class="header__top__items__content">
+          <i class="bi bi-person-circle"></i>
+          <div class="log__in__items">
+            <a
+              class="header-hover-color"
+              href="./dang-nhap.html"
+              target="_blank"
+              ><b>Đăng nhập</b></a
+            >
+            <br />
+            <a class="log-content header-hover-color" href="./dang-ki.html"
+              ><b>Đăng ký</b></a
+            >
+          </div>
+        </div>
+        <div class="header__top__items__content" onclick="openCart()">
+          <i class="bi bi-cart"></i>
+          <a class="header-hover-color" href="#">Giỏ hàng</a>
+        </div>
+      </div>
+      <nav class="nav max-width">
+        <ul class="nav__menu">
+          <li class="nav__menu__items">
+            <a href="#">Cáp Sạt</a>
+            <i class="bi bi-caret-down"></i>
+            <ul class="subnav__items">
+              <li><a href="#">Cáp Sạt Type C</a></li>
+              <li><a href="#">Cáp Sạt Micro USB</a></li>
+              <li><a href="#">Cáp Sạt Lightning</a></li>
+              <li><a href="#">Cáp Sạt C to Lightning </a></li>
+              <li class="last__item__subnav">
+                <a href="#">Cáp Sạt Type C to Type C</a>
+              </li>
+              <span class="arrow-up"></span>
+            </ul>
+          </li>
+          <li class="nav__menu__items">
+            <a href="#"> Củ Sạt</a>
+            <i class="bi bi-caret-down"></i>
+            <ul class="subnav__items">
+              <li><a href="#">Pin Sạc Dự Phòng</a></li>
+              <li><a href="#">Pin Dự Phòng Wireless</a></li>
+              <li><a href="#">Đế Sạc Không Dây</a></li>
+              <li class="last__item__subnav">
+                <a href="#">Cốc Sạc Iphone SamSung</a>
+              </li>
+              <span class="arrow-up"></span>
+            </ul>
+          </li>
+          <li class="nav__menu__items">
+            <a href="#">Chuyển Đổi</a>
+            <i class="bi bi-caret-down"></i>
+            <ul class="subnav__items">
+              <li><a href="#">Jack Chuyển Đổi Âm Thanh</a></li>
+              <li><a href="#">Cáp HDMI</a></li>
+              <li><a href="#">Cáp Type C-HDMI</a></li>
+              <li><a href="#">Thiết Bị Chuyển Đổi - OTG</a></li>
+              <li class="last__item__subnav">
+                <a href="#">Hub Chuyển Đổi Macbook</a>
+              </li>
+              <span class="arrow-up"></span>
+            </ul>
+          </li>
+          <li class="nav__menu__items">
+            <a href="#">Phụ Kiện Ô Tô</a>
+            <i class="bi bi-caret-down"></i>
+            <ul class="subnav__items">
+              <li><a href="#">Tẩu Sạc - Đế Sạc Ô Tô</a></li>
+              <li><a href="#">Đế Giữ Điện Thoại</a></li>
+              <li><a href="#">Bảng Số Điện Thoại</a></li>
+              <li><a href="#">Vệ Sinh - Chăm Sóc Xe</a></li>
+              <li class="last__item__subnav">
+                <a href="#">Lọc Không Khí - Khử Mùi</a>
+              </li>
+              <span class="arrow-up"></span>
+            </ul>
+          </li>
+          <li class="nav__menu__items">
+            <a href="#">Âm Thanh</a>
+            <i class="bi bi-caret-down"></i>
+            <ul class="subnav__items">
+              <li><a href="#">Tai Nghe Bluetooth</a></li>
+              <li><a href="#">Tai Nghe Có Dây</a></li>
+              <li><a href="#">Tai Nghe Chụp Tai</a></li>
+              <li><a href="#">Loa Bluetooth</a></li>
+              <li class="last__item__subnav"><a href="#">Case Tai Nghe</a></li>
+              <span class="arrow-up"></span>
+            </ul>
+          </li>
+          <li class="nav__menu__items">
+            <a href="#">Tiện Ích</a>
+            <i class="bi bi-caret-down"></i>
+            <ul class="subnav__items">
+              <li><a href="#">Giá đỡ điện thoại/Laptop</a></li>
+              <li><a href="#">Gậy Chụp Hình - Gimbal</a></li>
+              <li><a href="#">Quạt Để Bản Mini</a></li>
+              <li><a href="#">Bút Cảm Ứng-Bút Trình Chiếu</a></li>
+              <li class="last__item__subnav"><a href="#">Đèn Chiếu Sáng</a></li>
+              <span class="arrow-up"></span>
+            </ul>
+          </li>
+          <li class="nav__menu__items">
+            <a href="#">Cường Lực - Bảo Vệ - Ốp Lưng</a>
+            <i class="bi bi-caret-down"></i>
+            <ul class="subnav__items">
+              <li><a href="#">Cường Lực </a></li>
+              <li><a href="#">Dáng Màng Hình Iphone</a></li>
+              <li class="last__item__subnav"><a href="#">Ốp Lưng Baseus</a></li>
+              <span class="arrow-up"></span>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <div id="product_detail">
+      </div>
+      <div id="product_detail_last">
+
+      </div>
+    </section>
+    <section class="news max-width">
+      <div class="news__container">
+        <div class="news__container__name">
+          <span>TIN TỨC</span>
+        </div>
+        <div class="news__container__box">
+          <div class="news__container__box__items">
+            <div class="news__container__box__items__img">
+              <img src="../img2/01_tinTuc.webp" alt="">
+            </div>
+            <div class="news__container__box__items__title">
+              <span>
+                Đánh giá chi tiết về Cốc Sạc Nhanh GaN5 Baseus GaN5 Pro Ultra-Slim Fast Charger C+U 65W
+              </span>
+            </div>
+          </div>
+          <div class="news__container__box ds-flex">
+            <div class="news__container__box__items">
+              <div class="news__container__box__items__img">
+                <img src="../img2/02_tinTuc.webp" alt="">
+              </div>
+              <div class="news__container__box__items__title">
+                <span>
+                  Top những giá đỡ laptop đáng mua nhất năm 2022
+                </span>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer">
+          <div class="footer_top">
+              <img src="../img2/logo-project.jpg" alt="logo">
+          </div>
+          <div class="footer_center">
+              <ul>
+                  <li><h2>Product</h2></li>
+                  <li>Features</li>
+                  <li>Pricing</li>
+              </ul>
+              <ul>
+                  <li><h2>Resources</h2></li>
+                  <li>Blog</li>
+                  <li>User guides</li>
+                  <li>Webinars</li>
+              </ul>
+              <ul>
+                  <li><h2>Compani</h2></li>
+                  <li>About us</li>
+                  <li>Contract us</li>
+              </ul>
+              <ul>
+                  <li><h2>Plans & Pricing</h2></li>
+                  <li>Personal</li>
+                  <li>Start up</li>
+                  <li>Organization</li>
+              </ul>
+          </div>
+          <div class="footer_bottom">
+              <div>
+                  <p>English 
+                    <i class="bi bi-chevron-down"></i>
+                  </p>
+              </div>
+              <div>
+                  <p>@2023 Brand, Inc.<i class="bi bi-dot"></i>Privacy <i class="bi bi-dot"></i> Tems <i class="bi bi-dot"></i>Sitemap</p>
+              </div>
+              <div>
+                  <a href="https://www.twitch.tv/"><i class="bi bi-twitter"></i></a>
+                      <a href="https://www.facebook.com"><i class="bi bi-facebook"></i></a>
+                      <a href="https://www.youtube.com"><i class="bi bi-youtube"></i>
+                      </a>
+              </div>
+          </div>
+      </div>
+  </footer>
+  <script>
+    const keyProduct = window.location.search.replace("?ten=", "").split("&")[0];
+    const currentProduct = dataProducts[keyProduct];
+    const cart = []
+    const sectionProductDetail = document.getElementById("product_detail");
+    sectionProductDetail.innerHTML = `
+      <div class="product_detail_title">
+        <h1>${currentProduct.title}</h1>
+      </div>
+      <div class="product_detail_content">
+        <div class="product_detail_content_img">
+          <div class="content_img_mainThumbnail">
+
+            <button class="button-slider" id="arrow__left" onclick="onClickButtonControl('LEFT')">
+              <i class="bi bi-chevron-double-left"></i>
+              </button>
+              <button class="button-slider" id="arrow__right" onclick="onClickButtonControl('RIGHT')">
+                <i class="bi bi-chevron-double-right"></i>
+                </button>
+                <img id="main_img_preview"
+                  src=${currentProduct.mainThumbnail}
+                />
+        
+          </div>
+          <div class="product_detail_content_sliderThumbnail">
+            ${currentProduct.sliderThumbnail.map((itemSlide , index) =>{
+              const classByIndex = `class="sliderThumbnail_items ${index === 0 ? "slider-active" : ""} sliderThumbnail_items-${index}"`
+              const defaultStyle = `style="border-color: ${index === 0 ? "red" : "rgba(0, 0, 0, 0.1)"}"`
+              return `
+                <div ${classByIndex} key=${index} onclick="getPreviewImg(${index})">
+                  <img src=${itemSlide.src} class="src-${index}"/>
+                </div>
+              `
+            }).join(" ")}
+          </div>
+        </div>
+      <div class="product_detail_content_info">
+        <div class="product_detail_content_info_price">
+          <h2>
+            ${currentProduct.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
+            </h2>
+          <del>${currentProduct.discountPrice}</del>
+        </div>
+        <div class="product_detail_content_info_sku">
+          <span><b>Mã Sản Phẩm</b>: ${currentProduct.SKU}</span>
+        </div>
+        <div class="product_detail_content_info_items">
+          <span><b>Công Suất</b></span>
+        </div>
+        <div class="product_detail_content_info_power flex_star">
+            ${currentProduct.power.map((key,index)=>{
+              const styleborder = `power-type border-black ${index === 0 ? 'border-red' : ''}`
+              
+              return `
+              <div class="power-type-${index} ${styleborder}" onclick="getActiveOption(${index} , 'power-type')">
+                <p>${key.measure}</p>  
+              </div>
+              `
+            }).join(" ")}    
+        </div>
+        <div class="product_detail_content_info_items">
+          <span><b>Dung Lượng</b></span>
+        </div>
+        <div class="product_detail_content_info_capacity flex_star">
+          ${currentProduct.capacity.map((key,index)=>{
+              const styleborder = `capacity-type border-black ${index === 0 ? 'border-red' : ''}`
+              
+              return `
+              <div class="capacity-type-${index} ${styleborder}" onclick="getActiveOption(${index} , 'capacity-type')">
+                <p>${key.measure}</p>  
+              </div>
+              `
+            }).join(" ")}   
+          
+        </div>
+        <div class="product_detail_content_info_items">
+          <span><b>Màu Sắc</b></span>
+        </div>
+        <div class="product_detail_content_info_color flex_star">
+          ${currentProduct.color.map((dataColor , index)=>{
+              const backgroundColor = dataColor.colorCode.toLowerCase()
+              const styleBackground =  `style="background: ${backgroundColor ? backgroundColor : "unset"}"`
+              const colorByBackground = backgroundColor === 'black' || backgroundColor === 'grey' ? "special" : "normal"
+              const classByColor = `class="color-${colorByBackground} border-black ${index === 0 ? 'border-red' : ''} color-type-${index} color-type"`
+              const tickClass = `class="tick ${index === 0 ? 'tick-active' : ''}"`
+                return `
+                <div ${classByColor} ${styleBackground} onclick="getActiveOption(${index}, 'color-type')">
+                  <p>${dataColor.title}</p>  
+                </div>
+                `
+            }).join(" ")}
+        </div>
+        <div class="product_detail_content_info_quantities">
+          <span><b>Số Lượng</b></span>
+          <button class="product_detail_content_info_quantities__button" type="button" value="-" onclick="onClickButtonValue('DOWS')">-</button>
+          <button class="product_detail_content_info_quantities__button" type="button" value="+" onclick="onClickButtonValue('UP')">+</button>
+          <input class="numberOfProduct" type="text" value="1" readonly>
+        </div>
+        <div class="product_detail_content_info_buy">
+          <div>
+            <h3>Mua Ngay</h3>
+            <p>(Giao hàng tận nơi hoặc lấy tại cửa hàng )</p>
+          </div>
+          <div onclick="addToCart()">
+            <i class="bi bi-cart"></i>
+            <p>Thêm Vào Giỏ</p>
+          </div>
+        </div>
+        </div>
+        <div class="product_status">
+          <div class="product_status_linehot flex_star">  
+            <img
+              src="https://bizweb.dktcdn.net/100/462/529/themes/885708/assets/customer-service.png?1678878165820"
+              title="hotline"
+            >
+            <div>
+              <div>
+                <span> 
+                  Gọi ngay<b>0987556203</b> để được tư vấn tốt nhất!
+                </span>
+              </div>
+                <div>
+                <span> 
+                  Địa chỉ mua hàng chính hãng: <b>19 Nguyễn Du, P.7, Quận Gò</b>
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="product_status_info">
+            <div>
+              <span>
+                Tình trạng: 
+                <b>${currentProduct.status}</b>
+              </span>
+            </div>
+            <div>
+              <span>
+                Thương hiệu:
+                <b>${currentProduct.brand}</b>
+              </span>
+            </div>
+            <div>
+              <span>
+                Thương hiệu:
+                <b>${currentProduct.type}</b>
+              </span>
+            </div>
+          </div>
+          <div class="product_status_items">
+            <div>
+              <i class="bi bi-gift"></i>
+              <span>Khuyến Mãi</span>
+            </div>
+            <ul>
+              <li><i>Miễn phí ship cho đơn hàng từ 2.000.000Đ</i> </li>
+              <li><i>Áp dụng chính sách 1 đổi 1 cho các sản phẩm có mạch điện</i> </li>
+  </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+    <div class="product_cart">
+
+  </div>
+  <div class="overlay_cart" onclick="closeCart()" />
+    `;
+    const sectionProductDetailLast = document.getElementById("product_detail_last");
+    sectionProductDetailLast.innerHTML = `
+        <div class="product_detail_last_items">
+          <h3>Thông tin chi tiết</h3>
+          <h2> | ${currentProduct.detailContent.introTitle}</h2>
+          <span>${currentProduct.detailContent.description}<span>
+        </div>
+        <div class="product_detail_last_items">
+          <h3>Thông số kĩ thuật</h3>
+          <table>
+            <tr>
+              <td>Thương hiệu</td>
+              <td>${currentProduct.brand}</td>
+            </tr>
+            <tr>
+              <td>Tên</td>
+              <td>${currentProduct.title}</td>
+            </tr>
+            <tr>
+              <td>Màu sắc</td>
+              <td>
+                  ${currentProduct.color.map((dataColor , index)=>{return `
+                  ${dataColor.title}
+                `
+            }).join(",")}
+                  </td>
+            </tr>
+            <tr>
+              <td>Dung lượng </td>
+              <td> ${currentProduct.capacity.map((key , index)=>{return `
+                  ${key.measure}
+                `
+            }).join(",")}
+            </td>
+            </tr>
+          </table>
+            
+        </div>
+      </div>
+    `;
+  </script>
+  <script>
+        function onScrollHeader() {
+        const header = document.getElementsByClassName("header")[0];
+        const scrollProgress = window.scrollY;
+        if (scrollProgress > 0) {
+            header.style.top = "-122px";
+        } else {
+            header.style.top = "0";
+        }
+    }
+    const arrowLeft = document.getElementById("arrow__left")
+    const arrowRight = document.getElementById("arrow__right")
+    let numberProduct = 1
+    arrowLeft.style.opacity = 0
+    arrowRight.style.opacity = 1
+    let indexOfSliderImg = 0
+    window.addEventListener("scroll", onScrollHeader);
+    const getActiveOption = (index , className) =>{
+      const listClassName = document.getElementsByClassName(className)
+      for(i = 0; i < listClassName.length; i++){
+        listClassName[i].classList.remove("border-red")
+      }
+      const currentOptionChoosed = document.getElementsByClassName(`${className}-${index}`)[0]
+      currentOptionChoosed.classList.add(`border-red`)
+    }
+      
+    // GET mainIMG
+    const getPreviewImg = (index) =>{
+      indexOfSliderImg = index
+      // tương tác với DOM
+      // sẽ đè CSS lên file CSS , trừ khi CSS important, nó sẽ khó đè
+      const mainImg = document.getElementById("main_img_preview")
+      const scrChoosed = currentProduct.sliderThumbnail[index].src
+      mainImg.src= scrChoosed
+      // remove class active dang co
+      const sliderActive = document.getElementsByClassName("slider-active")[0]
+      sliderActive.classList.remove("slider-active")
+
+      // add class active cho thang index dc chon
+      const sliderChoosed = document.getElementsByClassName(`sliderThumbnail_items-${index}`)[0]
+      sliderChoosed.classList.add("slider-active")
+    arrowLeft.style.opacity = index === 0 ? 0 : 1
+    arrowRight.style.opacity = (index === currentProduct.sliderThumbnail.length -1) ? 0 : 1
+    }
+
+    const onClickButtonControl = (signal) =>{
+      if(signal === "LEFT"){
+        indexOfSliderImg = indexOfSliderImg - 1
+      }
+      if(signal === "RIGHT"){
+        indexOfSliderImg = indexOfSliderImg + 1
+      }
+      getPreviewImg(indexOfSliderImg)
+    }
+    const onClickButtonValue = (signal) =>{
+      const quantitiesProduct = document.getElementsByClassName("numberOfProduct")[0]
+      let total = Number(quantitiesProduct.value)
+      if(total === 1){
+        if( signal==="UP" ){
+        total++
+        quantitiesProduct.value = total
+        }  
+      }else{
+        if( signal==="UP" ){
+          total++
+        quantitiesProduct.value = total
+        }  else{
+        total--
+        quantitiesProduct.value = total
+        }
+      }
+      console.log('total' , total)
+      numberProduct=total
+
+    }
+    
+    const addToCart = () =>{
+      // cart = []
+      // cart.length = 0
+      // 0 === false
+      // 1 === true
+      // neu gio hang dang trong
+      if(!cart.length){
+        cart.push(currentProduct)
+        return;
+      }
+        // else(cart.length>1)
+        //   numberProduct=cart.length
+        //   console.log(cart.length)
+        updateCart()
+      // for(let i = 0; i < cart.length;i++){
+      //   if(cart[i].id === keyProduct){
+      //     cart = [...cart , {...cart[i] , }]
+      //   }
+      // }
+      //  console.log("cart" , cart)
+
+    }
+    const openCart = () =>{
+        const cart = document.getElementsByClassName("product_cart")[0]
+        const overlay = document.getElementsByClassName("overlay_cart")[0]
+        overlay.classList.add("open_overlay")
+        cart.classList.add("open_cart")
+        updateCart()
+  }
+    const closeCart = () =>{
+          const cart = document.getElementsByClassName("product_cart")[0]
+          const overlay = document.getElementsByClassName("overlay_cart")[0]
+          overlay.classList.remove("open_overlay")
+          cart.classList.remove("open_cart")
+    }
+    const updateCart = () =>{
+    const currentCart = document.getElementsByClassName("product_cart")[0]
+    console.log(currentCart)
+    currentCart.innerHTML = `
+    <div class="list_products">
+          ${cart.length > 0 ? cart.map((product, index) =>{
+            return `
+            <div class="product_in_cart_name">
+              <span>Sản Phẩm</span>
+              <span>Đơn Giá </span>
+              <span>Số Lượng</span>
+              <span>Số Tiền</span>
+              </div>
+            <div class="product_in_cart">
+              <div>
+                <img src=${product.mainThumbnail}/>
+                <h2>${product.title}
+              </div>
+              <div>
+                  <span class="productPrice">
+                      ${product.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
+                  </span>
+              </div>
+              <div>
+                  <span class="numberOfProduct">
+                      ${numberProduct}
+                  </span>
+              </div>
+              <div>
+                  <span class="numberOfProductPrice">
+                      ${(product.price*numberProduct).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
+                  </span>
+              </div>
+              </div>
+            `
+          }) : `<p>Gio hang hien tai dang trong !</p>`}
+            </div>
+    `
+  }
+  </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand:wght@500&family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/dang-nhap.css">
+    <script src="../js/dang-nhap.js"></script>
+
+</head>
+<body>
+    <section>
+        <div id="logn_in">
+            <img 
+            src="../img2/background_log-in.jpg"
+            alt="Ảnh nền "
+            >
+        </div>
+        <div class="content">
+            <div class="first">
+                <h1>Đăng Nhập</h1>
+            <h6><a href="./trang-chu.html">Trang chủ</a> / Đăng nhập tài khoản</h6>
+            </div>
+            <div class="account">
+                <label for="username">User Name</label>
+                <input
+                  id="account"
+                  type="text"
+                  name="User Name"
+                  placeholder="abc123"
+                  onblur="validate(value, id, name)"
+                />
+                <div><span class="text-account"></span></div>
+            </div>
+            <div class="password">
+                <label for="password">Mật Khẩu</label>
+                <br />
+                <input
+                    id="password"
+                    type="password"
+                    name="Mật Khẩu"
+                    placeholder="Abc123"
+                    onblur="validate(value,id, name)"
+                />
+                <div><span class="text-password"></span></div>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" > Nhớ đăng nhập</input>
+            </div>
+            <div class="logn">
+                <button type="button" onclick="testClick()">Đăng Nhập</button>
+                <div>
+                    <a href="#">Quên mật khẩu?</a>
+                </div>
+                
+            </div>
+            <div class="last">
+                <span>Bạn Chưa Có Tài Khoản?</span>
+                <a href="./dang-ki.html">Đăng Kí</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng Kí Tài Khoản</title>
+    <link rel="stylesheet" href="../css/dangKi.css" />
+    <script src="../js/dang-ki.js"></script>
+  </head>
+  <body>
+    <section>
+      <div class="background">
+        <img src="../img2/background_log-in.jpg" alt="Ảnh nền " />
+      </div>
+      <div class="content">
+        <div class="title items">
+          <h1>Đăng Kí</h1>
+          <h6>
+            <a href="../html/trang-chu.html">Trang chủ</a> / Đăng kí tài khoản
+          </h6>
+        </div>
+        <form>
+          <label for="username">User Name</label>
+          <input
+            id="account"
+            type="text"
+            name="User Name"
+            placeholder="abc123"
+            onblur="validate(value, id, name)"
+          />
+          <div><span class="text-account"></span></div>
+          <label for="phone__number">Số Điện Thoại</label>
+          <br />
+          <input
+            id="phone__number"
+            type="text"
+            name="Số Điện Thoại"
+            placeholder="0123456789"
+            onblur="validate(value, id, name)"
+          />
+          <div>
+            <span class="text-phone__number"></span>
+          </div>
+          <label for="email">Email</label>
+          <br />
+          <input
+            id="email"
+            type="email"
+            name="Email"
+            placeholder="Email"
+            onblur="validate(value, id, name)"
+          />
+          <div><span class="text-email"></span></div>
+          <label for="password">Mật Khẩu</label>
+          <br />
+          <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Abc123"
+            onblur="validate(value, id, name)"
+          />
+          <div><span class="text-password"></span></div>
+          <label for="resut-password">Nhập Lại Mật Khẩu</label>
+          <br />
+          <input
+            id="resut-password"
+            type="password"
+            name="resut-password"
+            placeholder="Abc123"
+            onblur="validate(value, id, name)"
+          />
+          <div><span class="text-resut-password"></span></div>
+          <button id="create" type="submit" onclick="getvalue()">Đăng Kí</button>
+        </form>
+        <div class="line">
+          <div></div>
+        </div>
+        <div class="log__in">
+          <div>
+            <a href="./dang-nhap.html">Đăng Nhập</a>
+          </div>
+          <div>
+            <a href="./trang-chu.html">Trang Chủ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
