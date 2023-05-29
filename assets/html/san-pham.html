@@ -255,7 +255,10 @@
     const keyProduct = window.location.search.replace("?ten=", "").split("&")[0];
     const currentProduct = dataProducts[keyProduct];
     const cart = []
-    const sectionProductDetail = document.getElementById("product_detail");
+    const $=document.getElementById.bind(document);
+    const $$=document.querySelector.bind(document);
+    const $$$=document.querySelectorAll.bind(document)
+    const sectionProductDetail = $("product_detail");
     sectionProductDetail.innerHTML = `
       <div class="product_detail_title">
         <h1>${currentProduct.title}</h1>
@@ -277,7 +280,7 @@
           </div>
           <div class="product_detail_content_sliderThumbnail">
             ${currentProduct.sliderThumbnail.map((itemSlide , index) =>{
-              const classByIndex = `class="sliderThumbnail_items ${index === 0 ? "slider-active" : ""} sliderThumbnail_items-${index}"`
+              const classByIndex = `class="sliderThumbnail_items ${index === 0 ? "slider-active" : ""}"`
               const defaultStyle = `style="border-color: ${index === 0 ? "red" : "rgba(0, 0, 0, 0.1)"}"`
               return `
                 <div ${classByIndex} key=${index} onclick="getPreviewImg(${index})">
@@ -460,61 +463,46 @@
     `;
   </script>
   <script>
-        function onScrollHeader() {
-        const header = document.getElementsByClassName("header")[0];
-        const scrollProgress = window.scrollY;
-        if (scrollProgress > 0) {
-            header.style.top = "-122px";
-        } else {
-            header.style.top = "0";
-        }
+    const onScrollHeader= () => {
+      const header = $$(".header");
+      const scrollProgress = window.scrollY;
+      scrollProgress > 0 ? header.style.top = "-122px" : header.style.top = "0";
     }
-    const arrowLeft = document.getElementById("arrow__left")
-    const arrowRight = document.getElementById("arrow__right")
-    let numberProduct = 1
-    arrowLeft.style.opacity = 0
-    arrowRight.style.opacity = 1
-    let indexOfSliderImg = 0
     window.addEventListener("scroll", onScrollHeader);
-    const getActiveOption = (index , className) =>{
-      const listClassName = document.getElementsByClassName(className)
-      for(i = 0; i < listClassName.length; i++){
-        listClassName[i].classList.remove("border-red")
+    const slidersItems=$$$('.sliderThumbnail_items')
+    let indexOfSliderImg = 0 
+    let numberProduct = 1
+    const product_cart = $$(".product_cart")
+    const overlay = $$(".overlay_cart")
+
+    slidersItems.forEach((item, index)=> {
+      item.onclick=function () {
+        indexOfSliderImg=index
+        addBoder(this)
+        $('main_img_preview').src=this.childNodes[1].src
       }
-      const currentOptionChoosed = document.getElementsByClassName(`${className}-${index}`)[0]
-      currentOptionChoosed.classList.add(`border-red`)
+    });
+    const addBoder=(slider) =>{
+      $$('.sliderThumbnail_items.slider-active').classList.remove('slider-active');
+      slider.classList.add('slider-active')
     }
-      
-    // GET mainIMG
-    const getPreviewImg = (index) =>{
-      indexOfSliderImg = index
-      // tương tác với DOM
-      // sẽ đè CSS lên file CSS , trừ khi CSS important, nó sẽ khó đè
-      const mainImg = document.getElementById("main_img_preview")
-      const scrChoosed = currentProduct.sliderThumbnail[index].src
-      mainImg.src= scrChoosed
-      // remove class active dang co
-      const sliderActive = document.getElementsByClassName("slider-active")[0]
-      sliderActive.classList.remove("slider-active")
-
-      // add class active cho thang index dc chon
-      const sliderChoosed = document.getElementsByClassName(`sliderThumbnail_items-${index}`)[0]
-      sliderChoosed.classList.add("slider-active")
-    arrowLeft.style.opacity = index === 0 ? 0 : 1
-    arrowRight.style.opacity = (index === currentProduct.sliderThumbnail.length -1) ? 0 : 1
-    }
-
     const onClickButtonControl = (signal) =>{
-      if(signal === "LEFT"){
+      if(signal === "LEFT" && indexOfSliderImg>0){
         indexOfSliderImg = indexOfSliderImg - 1
       }
-      if(signal === "RIGHT"){
+      if(signal === "RIGHT"&&indexOfSliderImg<3){
         indexOfSliderImg = indexOfSliderImg + 1
       }
-      getPreviewImg(indexOfSliderImg)
+      addBoder(slidersItems[indexOfSliderImg])
+      $('main_img_preview').src=slidersItems[indexOfSliderImg].childNodes[1].src
+    }
+    const getActiveOption = (index , className) =>{
+      $$(`.${className}.border-red`).classList.remove("border-red")
+      const currentOptionChoosed = $$(`.${className}-${index}`)
+      currentOptionChoosed.classList.add(`border-red`)
     }
     const onClickButtonValue = (signal) =>{
-      const quantitiesProduct = document.getElementsByClassName("numberOfProduct")[0]
+      const quantitiesProduct = $$(".numberOfProduct")
       let total = Number(quantitiesProduct.value)
       if(total === 1){
         if( signal==="UP" ){
@@ -533,47 +521,26 @@
       console.log('total' , total)
       numberProduct=total
 
-    }
-    
+    } 
     const addToCart = () =>{
-      // cart = []
-      // cart.length = 0
-      // 0 === false
-      // 1 === true
-      // neu gio hang dang trong
       if(!cart.length){
         cart.push(currentProduct)
         return;
       }
-        // else(cart.length>1)
-        //   numberProduct=cart.length
-        //   console.log(cart.length)
         updateCart()
-      // for(let i = 0; i < cart.length;i++){
-      //   if(cart[i].id === keyProduct){
-      //     cart = [...cart , {...cart[i] , }]
-      //   }
-      // }
-      //  console.log("cart" , cart)
-
     }
     const openCart = () =>{
-        const cart = document.getElementsByClassName("product_cart")[0]
-        const overlay = document.getElementsByClassName("overlay_cart")[0]
         overlay.classList.add("open_overlay")
-        cart.classList.add("open_cart")
+        product_cart.classList.add("open_cart")
         updateCart()
   }
     const closeCart = () =>{
-          const cart = document.getElementsByClassName("product_cart")[0]
-          const overlay = document.getElementsByClassName("overlay_cart")[0]
           overlay.classList.remove("open_overlay")
-          cart.classList.remove("open_cart")
+          product_cart.classList.remove("open_cart")
     }
     const updateCart = () =>{
-    const currentCart = document.getElementsByClassName("product_cart")[0]
-    console.log(currentCart)
-    currentCart.innerHTML = `
+    console.log(product_cart)
+    product_cart.innerHTML = `
     <div class="list_products">
           ${cart.length > 0 ? cart.map((product, index) =>{
             return `
